@@ -126,7 +126,7 @@ func worker(id int, wg *sync.WaitGroup, tasksQueue <-chan string, collection str
 
 			err = fetchFile(fileUrl.String(), filename, token)
 			if err != nil {
-				log.Printf("worker #%d: error: %s", id, err)
+				log.Printf("worker #%d: fetchFile: error: %s", id, err)
 				// Remove file and retry
 				_ = os.Remove(filename)
 				continue
